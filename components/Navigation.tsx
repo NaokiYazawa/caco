@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import React from 'react';
+import Image from 'next/image';
+import logo from '../public/logo.png';
 
 const Navigation = (): JSX.Element => {
   return (
     <nav>
       <Link href="/">
         <a className="text-gray-900 font-bold dark:text-white px-1.5 sm:px-5 py-4">
-          Home
+          Top
         </a>
       </Link>
       <Link href="/about">
@@ -21,7 +23,7 @@ const Navigation = (): JSX.Element => {
       </Link>
       <Link href="/mypage">
         <a className="text-gray-900 font-bold dark:text-white px-1.5 sm:px-5 py-4">
-          MyPage
+          App
         </a>
       </Link>
     </nav>
