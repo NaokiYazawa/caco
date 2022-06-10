@@ -4,8 +4,6 @@ This is a SaaS application that generates AI branding snippets and keywords for 
 
 ## Tech Stack
 
-## Tech Stack
-
 ### Backend Stack
 
 | Type      | Tech                                                                                                     |
