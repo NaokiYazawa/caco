@@ -3,7 +3,6 @@ import { MetaProps } from '../types/layout';
 import Head from './Head';
 import Navigation from './Navigation';
 import ThemeSwitch from './ThemeSwitch';
-import { FaYoutube, FaTwitter, FaGithub, FaInstagram } from 'react-icons/fa';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -17,18 +16,18 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
     <>
       <Head customMeta={customMeta} />
       <header>
-        <div className="max-w-5xl px-8 mx-auto">
-          <div className="flex items-center justify-between py-6">
+        <div className='max-w-5xl px-8 mx-auto'>
+          <div className='flex items-center justify-between py-6'>
             <Navigation />
             <ThemeSwitch />
           </div>
         </div>
       </header>
       <main>
-        <div className="max-w-5xl px-8 py-4 mx-auto">{children}</div>
+        <div className='max-w-5xl px-8 py-4 mx-auto'>{children}</div>
       </main>
-      <footer className="py-8 text-center ">
-        <div className="text-center p-4">
+      <footer className='py-8 text-center '>
+        <div className='text-center p-4'>
           <p>© 2022 Copyright:</p>
           <p>Naoki Yazawa</p>
         </div>

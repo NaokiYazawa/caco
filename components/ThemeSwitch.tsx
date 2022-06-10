@@ -22,13 +22,13 @@ const ThemeSwitch = (): JSX.Element => {
   const maskColor = isDark ? '#000' : '#fff';
   return (
     <button
-      className="theme-button"
-      type="button"
-      aria-label="Toggle Dark Mode"
+      className='theme-button'
+      type='button'
+      aria-label='Toggle Dark Mode'
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
-      <div className="moon-or-sun" />
-      <div className="moon-mask" />
+      <div className='moon-or-sun' />
+      <div className='moon-mask' />
       <style jsx>{`
         .theme-button {
           opacity: 0.5;

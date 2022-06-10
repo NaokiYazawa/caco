@@ -68,11 +68,11 @@ const CopyKitt: React.FC = () => {
     'text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 font-light w-fit mx-auto';
 
   return (
-    <div className="flex">
-      <div className="max-w-lg m-auto">
-        <div className="bg-slate-800 p-6 rounded-md">
-          <div className="text-center my-6">
-            <Image src={logo} width={42} height={42} alt="logo" />
+    <div className='flex'>
+      <div className='max-w-lg m-auto'>
+        <div className='bg-slate-800 p-6 rounded-md'>
+          <div className='text-center my-6'>
+            <Image src={logo} width={42} height={42} alt='logo' />
             <h1>Caco</h1>
           </div>
 
