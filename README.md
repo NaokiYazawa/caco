@@ -22,6 +22,6 @@ This is a SaaS application that generates AI branding snippets and keywords for 
 | Styling   | [TailwindCSS](https://tailwindcss.com/)                       |
 | Hosting   | [Vercel](https://vercel.com)                                  |
 
-
 ## Architecture
+
 ![image](https://user-images.githubusercontent.com/84239116/173046304-ff4f3701-0db3-4764-bab9-78f0736fe784.png)
