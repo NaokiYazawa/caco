@@ -64,9 +64,6 @@ const CopyKitt: React.FC = () => {
     );
   }
 
-  const gradientTextStyle =
-    'text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500 font-light w-fit mx-auto';
-
   return (
     <div className='flex'>
       <div className='max-w-lg m-auto'>
