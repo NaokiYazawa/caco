@@ -3,11 +3,11 @@ import Form from './form';
 import Results from './results';
 import Image from 'next/image';
 import logo from '../public/logo.png';
+import toast from 'react-hot-toast';
 
 const CopyKitt: React.FC = () => {
   const CHARACTER_LIMIT: number = 32;
-  const ENDPOINT: string =
-    'https://uzkzfkg79k.execute-api.ap-northeast-1.amazonaws.com/prod/generate_snippet_and_keywords';
+  const ENDPOINT: string = process.env.NEXT_PUBLIC_ENDPOINT;
   const [prompt, setPrompt] = React.useState('');
   const [snippet, setSnippet] = React.useState('');
   const [keywords, setKeywords] = React.useState([]);
@@ -17,9 +17,15 @@ const CopyKitt: React.FC = () => {
   const onSubmit = () => {
     console.log('Submitting: ' + prompt);
     setIsLoading(true);
-    fetch(`${ENDPOINT}?prompt=${prompt}`)
-      .then((res) => res.json())
-      .then(onResult);
+    try {
+      fetch(`${ENDPOINT}?prompt=${prompt}`)
+        .then((res) => res.json())
+        .then(onResult);
+    } catch (error) {
+      toast.error('Please check the communication status and try again.', {
+        duration: 6000,
+      });
+    }
   };
 
   const onResult = (data: any) => {
@@ -67,7 +73,7 @@ const CopyKitt: React.FC = () => {
         <div className="bg-slate-800 p-6 rounded-md">
           <div className="text-center my-6">
             <Image src={logo} width={42} height={42} alt="logo" />
-            <h1>CopyKitt</h1>
+            <h1>Caco</h1>
           </div>
 
           {displayedElement}

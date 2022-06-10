@@ -5,7 +5,7 @@ export const Price = (): JSX.Element => {
   return (
     <Layout
       customMeta={{
-        title: 'Price - CopyKitt',
+        title: 'Price - Caco',
       }}
     >
       <div className="text-center my-12">
