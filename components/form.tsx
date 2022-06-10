@@ -25,14 +25,14 @@ const Form: React.FC<FormProps> = (props) => {
   return (
     <>
       <div className="mb-6 text-slate-400">
-        <p>
+        <p className="text-lg">
           Tell me what your brand is about and I will generate copy and keywords
           for you.
         </p>
       </div>
 
       <input
-        className="p-2 w-full rounded-md focus:outline-teal-400 focus:outline text-slate-700"
+        className="p-2 w-full text-lg rounded-md focus:outline-teal-400 focus:outline text-slate-700"
         type="text"
         placeholder="coffee"
         value={props.prompt}
