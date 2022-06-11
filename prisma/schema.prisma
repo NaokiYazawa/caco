@@ -67,11 +67,13 @@ model VerificationToken {
 }
 
 model Result {
-  id      Int  @id @default(autoincrement())
-  user    User @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId  Int
-  prompt  String
-  snippet String
+  id        Int  @id @default(autoincrement())
+  user      User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    Int  @map("user_id")
+  prompt    String
+  snippet   String
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @default(now()) @map(name: "updated_at")
 
   @@map(name: "results")
 }

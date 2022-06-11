@@ -3,7 +3,7 @@ import Form from './form';
 import Results from './results';
 import Image from 'next/image';
 import logo from '../public/logo.png';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 const CopyKitt: React.FC = () => {
   const CHARACTER_LIMIT: number = 32;
@@ -13,6 +13,7 @@ const CopyKitt: React.FC = () => {
   const [keywords, setKeywords] = React.useState([]);
   const [hasResult, setHasResult] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [saved, setSaved] = React.useState(false);
 
   const onSubmit = () => {
     console.log('Submitting: ' + prompt);
@@ -33,12 +34,32 @@ const CopyKitt: React.FC = () => {
     setKeywords(data.keywords);
     setHasResult(true);
     setIsLoading(false);
+    setSaved(false);
   };
 
   const onReset = () => {
     setPrompt('');
     setHasResult(false);
     setIsLoading(false);
+  };
+
+  const onSave = async () => {
+    setIsLoading(true);
+    try {
+      const body = { prompt, snippet };
+      await fetch(`/api/results`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      setSaved(true);
+      setIsLoading(false);
+      toast.success('saved successfully.', {
+        duration: 5000,
+      });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   let displayedElement = null;
@@ -49,7 +70,10 @@ const CopyKitt: React.FC = () => {
         snippet={snippet}
         keywords={keywords}
         onBack={onReset}
+        onSave={onSave}
         prompt={prompt}
+        saved={saved}
+        isLoading={isLoading}
       />
     );
   } else {
@@ -72,7 +96,7 @@ const CopyKitt: React.FC = () => {
             <Image src={logo} width={42} height={42} alt='logo' />
             <h1>Caco</h1>
           </div>
-
+          <Toaster />
           {displayedElement}
         </div>
       </div>

@@ -3,6 +3,9 @@ interface ResultsProps {
   snippet: string;
   keywords: string[];
   onBack: any;
+  onSave: any;
+  saved: boolean;
+  isLoading: boolean;
 }
 
 const Results: React.FC<ResultsProps> = (props) => {
@@ -44,10 +47,12 @@ const Results: React.FC<ResultsProps> = (props) => {
       </div>
       <div className='flex'>
         <button
+          disabled={props.saved || props.isLoading}
+          onClick={props.onSave}
           type='button'
-          className='mx-auto text-white w-5/6 bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center my-5'
+          className='mx-auto disabled:opacity-50 disabled:cursor-default text-white w-5/6 bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center my-5'
         >
-          Save (comming soon)
+          {props.saved ? <span>Already Saved</span> : <span>Save Snippet</span>}
         </button>
       </div>
       <div className='flex'>
