@@ -2,7 +2,7 @@ import React from 'react';
 import { MetaProps } from '../types/layout';
 import Head from './Head';
 import Navigation from './Navigation';
-import ThemeSwitch from './ThemeSwitch';
+// import ThemeSwitch from './ThemeSwitch';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -19,7 +19,7 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
         <div className='max-w-5xl px-8 mx-auto'>
           <div className='flex items-center justify-between py-6'>
             <Navigation />
-            <ThemeSwitch />
+            {/* <ThemeSwitch /> */}
           </div>
         </div>
       </header>
