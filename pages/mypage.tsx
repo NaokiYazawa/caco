@@ -9,9 +9,9 @@ export const MyPage = (props): JSX.Element => {
     <Layout>
       {props.results.map((result) => (
         <article key={result.id} className='mt-12'>
-          <section className='body-font overflow-hidden'>
-            <div className='container p-5'>
-              <div className='-my-8 divide-y-2 divide-gray-100'>
+          <section className='body-font w-10/12 overflow-hidden'>
+            <div className='p-1'>
+              <div className='divide-gray-100'>
                 <div className='py-5 flex flex-wrap md:flex-nowrap'>
                   <div className='md:w-56 md:mb-0 mb-4 flex-shrink-0 flex flex-col'>
                     <span className='mt-1 text-sm'>{result.createdAt}</span>
@@ -42,6 +42,9 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   const data = await prisma.result.findMany({
     where: {
       user: { email: session.user.email },
+    },
+    orderBy: {
+      createdAt: 'desc',
     },
   });
   const results = JSON.parse(JSON.stringify(data));
