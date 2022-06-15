@@ -9,10 +9,10 @@ export const MyPage = (props): JSX.Element => {
     <Layout>
       {props.results.map((result) => (
         <article key={result.id} className='mt-12'>
-          <section className='body-font w-10/12 overflow-hidden'>
+          <section className='body-font w-11/12 overflow-hidden'>
             <div className='p-1'>
               <div className='divide-gray-100'>
-                <div className='py-5 flex flex-wrap md:flex-nowrap'>
+                <div className='py-5'>
                   <div className='md:w-56 md:mb-0 mb-4 flex-shrink-0 flex flex-col'>
                     <span className='mt-1 text-sm'>{result.createdAt}</span>
                   </div>
