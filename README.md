@@ -2,6 +2,17 @@
 
 This is a SaaS application that generates AI branding snippets and keywords for the customer's brand.
 
+## Overview
+
+Left: The initial screen of the Caco app  
+Right： Execution result
+
+<p align="left">
+  <img height="500px" alt="before" src="https://user-images.githubusercontent.com/84239116/173989372-9c3352dd-e276-4385-ba2c-d5baf6303c19.png" />
+  <img height="500px" alt="after" src="https://user-images.githubusercontent.com/84239116/173988835-b7849068-dd49-4db9-bd40-7ccc9514aab0.png"  />
+</p>
+
+
 ## Tech Stack
 
 ### Backend Stack
